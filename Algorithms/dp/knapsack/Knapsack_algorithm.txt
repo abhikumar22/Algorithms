@@ -1,0 +1,22 @@
+W1…wn = weights of knapsack
+P1…pn = Profit of knapsack
+C = Total capacity of knapsack
+T[n,c] = Total profit with n items and c capacity
+B[n,c] = ???
+
+Input :- {w1,w2,w3……wn}, c, {p1, p2, p3….pn}
+Output :- T[n,c]
+ALGORITHM
+1)	For i=0 to c do
+2)	      	T[0,i]=0
+3)	For i=0 to n
+{
+4)	 	B[i,0]=0
+5)		For(j=1 to c) do
+6)		If( wi<=j ) and ( T[i-1,j-wk]+pi>t[i-1,j] )
+7)			Then T[I,j]=t[i-1,j-wi]+pi;
+8)		Else        t[i,j]=t[i-1,j]
+}
+
+Time Complexity = O(nw)
+Space complexity = O(nw)	

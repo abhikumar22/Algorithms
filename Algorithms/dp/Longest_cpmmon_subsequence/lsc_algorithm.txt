@@ -1,0 +1,29 @@
+X1, X2,...Xn = Subsequence 1ST
+Y1, Y2....Yn = Subsequence 2ND
+C[i,j] = array of size n*m for storing the LCS length sequence upto i,j
+B[i,j] = array of size n*m for tracing out the LCS
+
+
+Input :- {x1,x2....xn}, {y1,y2,.....,yn}
+Output :- C is returned to the calling function
+
+ALGORITHM
+
+LCS(X,Y)
+{
+1) m=X.length
+2) n=Y.length
+3) let C[0...m, 0....n] be new tables
+4) for i=0 to n
+5) 	C[i,0]=0;
+6) for j=0 to m
+7) 	C[0,j]=0;
+8) for i=1 to m
+9) 	for j=1 to n
+10)		if Xi==Yi
+11)			C[i,j]=C[i-1,j-1]+1
+12)		else
+13)			C[i,j]=max(C[i-1,j],C[i,j-1])
+14) return C 
+Time Complexity = O(mn)
+Space complexity = O(mn)	

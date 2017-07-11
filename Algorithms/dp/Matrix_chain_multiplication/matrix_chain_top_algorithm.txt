@@ -1,0 +1,33 @@
+
+k=spliting position
+M[i,j]=array for calculating splits at i,j
+q=temporary variable for storing the Scalar multiplication of matrix
+
+input :- p= Dimention of Matrices
+output :- return M and S array to the calling function
+
+Lookup_chain(m,p,i,j)
+{
+1) if m[i,j] < 99999
+2) 	return m[i,j]
+3) if i==j
+4) 	m[i,j]=0
+5) else 
+	for k=i to j-1
+7) 		q=Lookup_chain(m,p,i,k) + Lookup_chain(m,p,k+1,j) + pi-1*pk*pj
+8) if q < m[i,j]
+9) 	m[i,j]=q
+10) return m[i,j]
+
+Memoized_matrix_chain(p)
+{
+1)	n=p.length-1
+2)	let m[1...n,1...m] be new tables
+3)	for i=1 to n
+4)		for j=1 to n
+5)			m[i,j] = 99999
+6)	return Lookup_chain(m,p,i,m)
+}
+
+Time Complexity = O(n*n)O(n)
+Space Complexity = O(n*n)

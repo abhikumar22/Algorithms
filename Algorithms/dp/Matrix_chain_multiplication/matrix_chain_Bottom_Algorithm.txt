@@ -1,0 +1,28 @@
+
+k=spliting position
+M[i,j]=array for calculating splits at i,j
+q=temporary variable for storing the Scalar multiplication of matrix
+
+input :- p= Dimention of Matrices
+output :- return M and S array to the calling function
+
+MATRIX_CHAIN(P)
+{
+1) n=P.length-1
+2) Let M[1...n, 1...m] and S[1...n-1,2...n] be new Tables
+3) for i=1 to n
+4) 	m[i,j]=0
+5) for l=2 to n 
+6) 	for i=1 to n-l+1
+10)		j=i+l-1
+11)		m[i,j]=999999
+12)		for k=i to j-1
+13)			q=m[i,k]+m[k+1]+pi-1*pk*pj
+14)		if q < m[i,j]
+15)			m[i,j]=q
+16)			s[i,j]=k
+17) return M and S
+}
+
+Time Complexity = O(n*n)O(n)
+Space Complexity = O(n*n)
